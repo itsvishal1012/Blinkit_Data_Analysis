@@ -1,12 +1,8 @@
 # Blinkit Data Analysis
-
-> Detailed README for the Blinkit dataset and analysis project
-
 ---
 
 ## Project Overview
-
-This repository contains code, notes, and results for analyzing the Blinkit dataset (`blinkit_data.csv`). The goal is to explore, clean, and model delivery / sales / operational metrics to generate insights and reproducible analysis pipelines.
+This repository contains code, notes, and results for analyzing the Blinkit dataset (`blinkit_data.csv`). The goal is to explore, clean, and model delivery , sales , operational metrics to generate insights and reproducible analysis pipelines.
 
 Typical use-cases:
 - Exploratory Data Analysis (EDA) and visualization
@@ -16,30 +12,13 @@ Typical use-cases:
 
 ---
 
-## Repository structure
-
-```
-├── data/
-│   ├── blinkit_data.csv       # raw dataset (sourced/uploaded)
-│   └── processed/             # cleaned / processed datasets
-├── notebooks/                 # Jupyter / analysis notebooks
-├── src/                       # reusable code (data loading, cleaning, modeling)
-├── reports/                   # figures, tables, and exported results
-├── requirements.txt           # Python packages required
-└── README.md                  # this file
-```
-
-> If your CSV file has a different name or columns, update `data/` and the code accordingly.
-
----
-
 ## Getting started (local)
 
 1. Clone the repo:
 
 ```bash
-git clone <your-repo-url>
-cd <your-repo-name>
+git clone Blinkit_Data_Analysis.git
+cd Blinkit_Data_Analysis.git
 ```
 
 2. Create a Python virtual environment and install dependencies:
@@ -51,15 +30,7 @@ venv\\Scripts\\activate       # Windows PowerShell
 pip install -r requirements.txt
 ```
 
-3. Place your dataset in `data/blinkit_data.csv` (or update paths in notebooks).
-
-4. Run the example notebook or script:
-
-```bash
-jupyter lab             # then open notebooks/00_EDA.ipynb
-# or
-python src/run_eda.py
-```
+3. Place your dataset in `data/blinkit_data.csv`.
 
 ---
 
@@ -116,37 +87,6 @@ print(df.head())
 - Train/test split, a baseline linear model, and a tree-based model (RandomForest or LightGBM)
 - Evaluate with MAE / RMSE for regression tasks
 
----
-
-## Notebooks & Scripts to include (suggested)
-
-- `notebooks/00_data_overview.ipynb` — quick look at columns, missingness, types
-- `notebooks/01_eda.ipynb` — visual EDA (histograms, boxplots, group stats)
-- `notebooks/02_feature_engineering.ipynb` — derived features and transformations
-- `notebooks/03_modeling.ipynb` — baseline models and evaluation
-- `src/data_processing.py` — reusable data cleaning functions
-- `src/features.py` — feature engineering functions
-- `src/models.py` — model training and persistence utilities
-
----
-
-## Reproducible example: minimal `run_eda.py`
-
-```python
-# src/run_eda.py
-import pandas as pd
-
-def main(path='data/blinkit_data.csv'):
-    df = pd.read_csv(path, parse_dates=['order_time','delivery_time'])
-    print('Rows, cols:', df.shape)
-    print(df.describe(include='all'))
-
-if __name__ == '__main__':
-    main()
-```
-
----
-
 ## Common pitfalls & tips
 
 - Timezones: ensure all timestamps use the same timezone or convert to UTC before calculating durations.
@@ -158,7 +98,7 @@ if __name__ == '__main__':
 ## Contributing
 
 1. Fork the repo
-2. Create a branch: `git checkout -b feature/your-feature`
+2. Create a branch
 3. Add tests and documentation
 4. Open a pull request
 
